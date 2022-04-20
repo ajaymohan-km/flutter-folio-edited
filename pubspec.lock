@@ -63,7 +63,7 @@ packages:
       path: "."
       ref: "8800276218b053265ffc796a24e84820bebaaeac"
       resolved-ref: "8800276218b053265ffc796a24e84820bebaaeac"
-      url: "git://github.com/gskinnerTeam/auto_size_text.git"
+      url: "https://github.com/gskinnerTeam/auto_size_text.git"
     source: git
     version: "3.0.0-nullsafety.0"
   bitsdojo_window:

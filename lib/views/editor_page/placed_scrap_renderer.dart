@@ -123,6 +123,7 @@ class _TextBoxState extends State<_TextBox> {
           StringUtils.defaultOnEmpty(_txtValue, promptText),
           minFontSize: 10,
           maxFontSize: 999,
+
           textBuilder: (size, style, numLines) {
             style = style.copyWith(color: widget.item.boxStyle?.fgColor ?? Colors.black);
             TextAlign textAlign = widget.item.boxStyle?.align ?? TextAlign.left;
@@ -139,7 +140,7 @@ class _TextBoxState extends State<_TextBox> {
                     onFocusOut: _handleTextChanged,
                     // SB: Due to a bug in Flutter where we were missing focusOut events, we're saving on every keystroke for this editor.// TODO: Try and get reproduction steps for this...
                     onChanged: _handleTextChanged,
-                    style: style.copyWith(fontSize: size, fontFamily: boxFontToFamily(widget.item.boxStyle?.font)),
+                    style: style.copyWith(fontSize: size, fontFamily: boxFontToFamily(widget.item.boxStyle?.font)) as TextStyle,
                   )
                 : Container(
                     alignment: Alignment.center,
@@ -147,7 +148,7 @@ class _TextBoxState extends State<_TextBox> {
                       width: double.infinity,
                       child: Text(StringUtils.defaultOnEmpty(widget.item.data, promptText),
                           style:
-                              style.copyWith(fontSize: size, fontFamily: boxFontToFamily(widget.item.boxStyle?.font)),
+                              style.copyWith(fontSize: size, fontFamily: boxFontToFamily(widget.item.boxStyle?.font))as TextStyle,
                           maxLines: 99,
                           textAlign: textAlign),
                     ),
